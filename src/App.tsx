@@ -1,9 +1,9 @@
 import { ApiProvider } from "./providers/ApiProvider";
-import { DomainList } from "./components/DomainList";
+import Dashboard from "./pages/Dashboard";
 
 const App = () => (
   <ApiProvider>
-    <DomainList />
+    <Dashboard />
   </ApiProvider>
 );
 

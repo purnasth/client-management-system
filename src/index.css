@@ -1,1 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+
 @import "tailwindcss";
+
+@theme {
+  --font-body: "Plus Jakarta Sans", "Libre Franklin", sans-serif;
+  --color-dark: rgba(28, 28, 30, 0.6);
+  --color-light: rgba(255, 255, 255, 1);
+  --transition-200: transition-all 200ms ease-in-out;
+}
+
+@layer components {
+  ::selection {
+    @apply bg-dark text-light;
+  }
+
+  * {
+    scrollbar-width: thin;
+  }
+
+  ::-webkit-scrollbar {
+    @apply w-2 rounded-full bg-transparent;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-rose-700 rounded-full border border-solid border-rose-400;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-rose-800;
+  }
+
+  *,
+  html,
+  body {
+    @apply !font-body text-sm;
+  }
+
+  .navlink,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-medium;
+  }
+
+  label,
+  a,
+  input,
+  textarea,
+  button,
+  ul,
+  li {
+    @apply font-light;
+  }
+
+  p,
+  span {
+    @apply font-normal;
+  }
+
+  /* section {
+        @apply py-24 md:py-32 lg:py-48 px-4;
+      } */
+}

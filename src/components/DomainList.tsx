@@ -41,17 +41,25 @@ export const DomainList = () => {
             </tr>
           </thead>
           <tbody>
-            {domains.map((d, i) => (
-              <tr key={d.id || i}>
-                {allKeys.map((key) => (
-                  <td key={key} className="border px-2 py-1 whitespace-nowrap">
-                    {d[key] === undefined || d[key] === null || d[key] === ""
-                      ? "-"
-                      : String(d[key])}
-                  </td>
-                ))}
-              </tr>
-            ))}
+            {domains.map((d, i) => {
+              const rec = d as unknown as Record<string, unknown>;
+              return (
+                <tr key={d.id || i}>
+                  {allKeys.map((key) => (
+                    <td
+                      key={key}
+                      className="border px-2 py-1 whitespace-nowrap"
+                    >
+                      {rec[key] === undefined ||
+                      rec[key] === null ||
+                      rec[key] === ""
+                        ? "-"
+                        : String(rec[key])}
+                    </td>
+                  ))}
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </AsyncState>
